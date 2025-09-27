@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fade-in with upward motion */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-in-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white min-h-screen flex flex-col items-center py-10 px-6">
+
+  <!-- Page Title -->
+  <h2 class="text-4xl font-bold mb-10 text-blue-400 fade-in-up">My Skills</h2>
+
+  <!-- Skills Grid -->
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-6xl">
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Java</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Spring Boot</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Hibernate</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">REST APIs</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Thymeleaf</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">React.js</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">MySQL & PostgreSQL</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Git & GitHub</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Microservices</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">HTML & CSS</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">JavaScript</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
+      <p class="text-xl font-semibold text-center text-white">Hibernate & DataJPA</p>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div class="mt-10 fade-in-up">
+    <a href="/" 
+       class="px-6 py-3 bg-gray-600 hover:bg-gray-700 rounded-xl transition transform hover:scale-105 shadow-md">
+       ⬅ Back
+    </a>
+  </div>
+
+</body>
+</html>

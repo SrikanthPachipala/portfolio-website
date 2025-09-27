@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fade-in and slide-up animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+    .animate-slideUp { animation: slideUp 1s ease-out forwards; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 via-white to-indigo-50 p-6">
+
+  <!-- Card Container -->
+  <div class="max-w-3xl bg-white rounded-3xl shadow-xl p-10 transform transition duration-500 hover:scale-105 hover:shadow-2xl animate-fadeIn">
+    
+    <!-- Title -->
+    <h2 class="text-4xl font-extrabold text-indigo-700 text-center mb-6 tracking-wide animate-slideUp">
+      About Me
+    </h2>
+
+    <!-- Content -->
+    <p th:text="${user != null ? user.about : 'I am Srikanth Pachipala, a Java Developer with expertise in Spring Boot, REST APIs, and React.js. I enjoy creating scalable backend systems and building responsive, animated frontends using Tailwind CSS. I have over 3+ years of experience designing and developing web applications in domains like healthcare, sports, and entertainment. My work includes building secure, high-performance REST APIs, integrating databases like MySQL and PostgreSQL, and implementing microservices architecture. I am passionate about clean code, best practices, and continuously learning new technologies. In my free time, I contribute to open-source projects, explore innovative frontend designs, and optimize application performance to deliver seamless user experiences..'}"
+       class="text-gray-700 leading-relaxed text-lg text-justify mb-6 animate-slideUp">
+    </p>
+
+    <!-- Back Button -->
+    <div class="flex justify-center">
+      <a href="/"
+         class="px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 hover:shadow-2xl transition duration-300 animate-slideUp">
+        ⬅ Back
+      </a>
+    </div>
+  </div>
+
+  <!-- Optional Extra Animation on Page Load -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const card = document.querySelector('.max-w-3xl');
+      card.classList.add('animate-fadeIn');
+    });
+  </script>
+
+</body>
+</html>

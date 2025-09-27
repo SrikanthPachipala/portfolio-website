@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${user != null ? user.name : 'Portfolio'}"></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple keyframe animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white min-h-screen flex flex-col items-center justify-center px-6">
+
+  <!-- Header -->
+  <header class="text-center fade-in">
+    <h1 class="text-5xl font-extrabold mb-4 tracking-wide" 
+        th:text="${user != null ? user.name : 'Srikanth Pachipala'}"></h1>
+    <h3 class="text-2xl font-light text-gray-300 mb-8"
+        th:text="${user != null ? user.title : 'Java Developer'}"></h3>
+  </header>
+
+  <!-- Navigation Buttons -->
+  <nav class="flex flex-wrap gap-4 justify-center fade-in" style="animation-delay:0.3s;">
+    <a href="/about" 
+       class="px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 transition transform hover:scale-105 shadow-lg">
+       About
+    </a>
+    <a href="/skills" 
+       class="px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 transition transform hover:scale-105 shadow-lg">
+       Skills
+    </a>
+    <a href="/projects" 
+       class="px-6 py-3 rounded-xl bg-purple-500 hover:bg-purple-600 transition transform hover:scale-105 shadow-lg">
+       Projects
+    </a>
+    <a href="/contact" 
+       class="px-6 py-3 rounded-xl bg-yellow-500 hover:bg-yellow-600 transition transform hover:scale-105 shadow-lg">
+       Contact
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-4 text-gray-400 text-sm">
+    © <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> 
+    <span th:text="${user != null ? user.name : 'Your Name'}"></span> | All Rights Reserved
+  </footer>
+
+</body>
+</html>
