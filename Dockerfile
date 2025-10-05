@@ -5,7 +5,8 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Step 3: Copy the JAR file to container
-COPY target/portfolio-0.0.1-SNAPSHOT.jar app.jar
+COPY target/Portfolio-0.0.1-SNAPSHOT.jar app.jar
+
 
 # Step 4: Expose the port
 EXPOSE 9696
