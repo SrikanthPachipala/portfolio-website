@@ -22,6 +22,15 @@ public class Project {
 	private String techStack;
 	private String githubLink;
 	private String demoLink;
+	private String linkedinLink;
+
+	public String getLinkedinLink() {
+		return linkedinLink;
+	}
+
+	public void setLinkedinLink(String linkedinLink) {
+		this.linkedinLink = linkedinLink;
+	}
 
 	public Long getId() {
 		return id;

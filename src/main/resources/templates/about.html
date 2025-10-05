@@ -4,50 +4,94 @@
   <title>About</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Fade-in and slide-up animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* --- Emoji Animation --- */
+    @keyframes peek {
+      0% { content: "🙈"; }
+      40% { content: "🙉"; }
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
+    .emoji::before {
+      content: "🙈";
+      font-size: 5rem;
+      display: block;
+      animation: peek 2s steps(1, end) forwards;
     }
 
-    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-    .animate-slideUp { animation: slideUp 1s ease-out forwards; }
+    /* --- Fade Animations --- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-fadeInUp { animation: fadeInUp 1s ease forwards; }
+    .animate-fadeInScale { animation: fadeInScale 1s ease forwards; }
+
+    /* Glow text effect */
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px rgba(99,102,241,0.7), 0 0 20px rgba(99,102,241,0.5); }
+      50% { text-shadow: 0 0 20px rgba(99,102,241,1), 0 0 40px rgba(99,102,241,0.7); }
+    }
+    .animate-glow { animation: glow 2s infinite alternate; }
+
+    /* Loader styles */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 via-white to-indigo-50 p-6">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-900 via-purple-900 to-black p-6">
 
-  <!-- Card Container -->
-  <div class="max-w-3xl bg-white rounded-3xl shadow-xl p-10 transform transition duration-500 hover:scale-105 hover:shadow-2xl animate-fadeIn">
+  <!-- Emoji Loader -->
+  <div id="loader">
+    <div class="emoji"></div>
+  </div>
+
+  <!-- Main Card -->
+  <div id="content" class="max-w-4xl bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl p-10 transform transition duration-500 hover:scale-105 hover:shadow-indigo-500/50 opacity-0">
     
     <!-- Title -->
-    <h2 class="text-4xl font-extrabold text-indigo-700 text-center mb-6 tracking-wide animate-slideUp">
+    <h2 class="text-5xl font-extrabold text-center mb-6 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 animate-glow animate-fadeInUp">
       About Me
     </h2>
 
     <!-- Content -->
-    <p th:text="${user != null ? user.about : 'I am Srikanth Pachipala, a Java Developer with expertise in Spring Boot, REST APIs, and React.js. I enjoy creating scalable backend systems and building responsive, animated frontends using Tailwind CSS. I have over 3+ years of experience designing and developing web applications in domains like healthcare, sports, and entertainment. My work includes building secure, high-performance REST APIs, integrating databases like MySQL and PostgreSQL, and implementing microservices architecture. I am passionate about clean code, best practices, and continuously learning new technologies. In my free time, I contribute to open-source projects, explore innovative frontend designs, and optimize application performance to deliver seamless user experiences..'}"
-       class="text-gray-700 leading-relaxed text-lg text-justify mb-6 animate-slideUp">
+    <p th:text="${user != null ? user.about : 
+      'I am Srikanth Pachipala, a Java Developer with expertise in Spring Boot, REST APIs, and React.js. I enjoy creating scalable backend systems and building responsive, animated frontends using Tailwind CSS. I have 3+ years of experience in healthcare, sports, and entertainment domains. My work includes secure REST APIs, database integration, and microservices architecture. I am passionate about clean code, best practices, and continuous learning. In my free time, I contribute to open-source projects, explore frontend designs, and optimize performance for seamless user experiences.'}" 
+       class="text-gray-200 leading-relaxed text-lg text-justify mb-6 animate-fadeInUp delay-1">
     </p>
 
     <!-- Back Button -->
-    <div class="flex justify-center">
+    <div class="flex justify-center animate-fadeInUp delay-2">
       <a href="/"
-         class="px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-full shadow-lg hover:bg-indigo-700 hover:scale-110 hover:shadow-2xl transition duration-300 animate-slideUp">
+         class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-lg font-semibold rounded-full shadow-lg hover:from-purple-600 hover:to-pink-600 transform hover:scale-110 hover:shadow-pink-500/50 transition duration-300">
         ⬅ Back
       </a>
     </div>
   </div>
 
-  <!-- Optional Extra Animation on Page Load -->
+  <!-- Script to hide loader -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const card = document.querySelector('.max-w-3xl');
-      card.classList.add('animate-fadeIn');
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").classList.add("hidden");
+        document.getElementById("content").classList.add("animate-fadeInScale");
+        document.getElementById("content").style.opacity = "1";
+      }, 2000); // wait for emoji animation
     });
   </script>
 

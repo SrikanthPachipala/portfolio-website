@@ -20,7 +20,7 @@ public class User {
 	private String name;
 	private String title;
 	private String about;
-	private String profileImage; // URL or base64
+	private String profileImage; 
 	private String resumeLink;
 
 	public Long getId() {

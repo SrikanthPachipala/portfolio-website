@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Projects</title>
+  <title>My Projects</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Fade-in with upward motion */
@@ -17,45 +17,50 @@
 <body class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white min-h-screen flex flex-col items-center py-10 px-6">
 
   <!-- Page Title -->
-  <h2 class="text-4xl font-bold mb-10 text-blue-400 fade-in-up">My Projects</h2>
+  <h2 class="text-4xl font-bold mb-6 text-blue-400 fade-in-up">🚀 My Projects</h2>
+
+  <!-- Global GitHub Link -->
+  <!-- GitHub + LinkedIn Buttons -->
+<div class="flex space-x-3">
+  <a href="https://github.com/SrikanthPachipala" target="_blank"
+     class="inline-block px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium transition">
+    💻 GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/srikanth-pachipala-bb94b2360/" target="_blank"
+     class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white font-medium transition">
+    🔗 LinkedIn
+  </a>
+</div>
+
 
   <!-- Projects Grid -->
   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl">
     
-    <!-- Project 1 -->
+    <!-- Entertainment Booking System -->
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
-      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Health Insurance System</h4>
+      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Entertainment Booking System (Fun Lab)</h4>
       <p class="text-gray-300 mb-4">
-        A web-based system to manage insurance policies, claims, and user accounts efficiently.
+        A dynamic booking platform (Fun Lab) for movies, concerts, and events with integrated payment gateway and seat selection.
       </p>
-      <a href="#" target="_blank"
-         class="inline-block px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-medium transition">
-         🚀 View Project
-      </a>
+      <p class="text-sm text-gray-400"><b>Tech Stack:</b> Java, Spring Boot, Spring Data JPA, MySQL, Thymeleaf, TailwindCSS</p>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Health Insurance System -->
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
-      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Sports Management System</h4>
+      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Health Insurance System (Rode Islands)</h4>
       <p class="text-gray-300 mb-4">
-        An application to manage sports teams, tournaments, and player statistics with ease.
+        A secure health insurance system (Rode Islands) to manage policies, user claims, payments, and hospital tie-ups seamlessly.
       </p>
-      <a href="#" target="_blank"
-         class="inline-block px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-medium transition">
-         🚀 View Project
-      </a>
+      <p class="text-sm text-gray-400"><b>Tech Stack:</b> Java, Spring Boot, Hibernate, MySQL, Thymeleaf, Bootstrap</p>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Sports Management System -->
     <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 fade-in-up">
-      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Entertainment Booking System</h4>
+      <h4 class="text-2xl font-semibold text-blue-400 mb-3">Sports Management System (Sports Plus)</h4>
       <p class="text-gray-300 mb-4">
-        A dynamic platform for booking events, movies, and concerts online with payment integration.
+        A complete sports management system (Sports Plus) for managing teams, tournaments, schedules, and player performance tracking.
       </p>
-      <a href="#" target="_blank"
-         class="inline-block px-5 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-medium transition">
-         🚀 View Project
-      </a>
+      <p class="text-sm text-gray-400"><b>Tech Stack:</b> Java, Spring Boot, Spring MVC, MySQL, Thymeleaf, TailwindCSS</p>
     </div>
 
   </div>
